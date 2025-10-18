@@ -1,0 +1,20 @@
+# VSCode 설정
+.vscode/
+
+# 빌드 결과물
+*.out
+*.exe
+*.o
+
+# 임시 파일
+*.log
+*.tmp
+
+# 시스템 파일
+.DS_Store
+Thumbs.db
+
+# 백준 문제 출력 파일 등
+input.txt
+output.txt
+
