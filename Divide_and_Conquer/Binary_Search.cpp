@@ -64,11 +64,11 @@ int main(void) {
 
     cout << "----------------- 재귀문 기반 -----------------\n";
     cout << "key = 3 인 경우 해당 인덱스 출력\n";
-    cout << binary_search(v, 3) << '\n';
+    cout << binary_search_re(v, 0, 4, 3) << '\n';
     cout << '\n';
     
     cout << "key = 4 인 경우 해당 인덱스 출력\n";
-    cout << binary_search(v, 4) << '\n';
+    cout << binary_search_re(v, 0, 4, 4) << '\n';
     cout << '\n';
 
     return 0;
