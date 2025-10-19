@@ -32,14 +32,14 @@ long long fibonacci_recur(int n) {
 }
 
 // // 재귀를 동적 계획법(DP)로 작성하면 시간복잡도를
-// // Θ(log n) 까지 줄일 수 있으나, 아직 학습하지 않았으므로, 학습후 추가 예정
+// // Θ(n) 까지 줄일 수 있으나, 아직 학습하지 않았으므로, 학습후 추가 예정
 
 // long long fibonacci_dp(int n) {
 
 // }
 
 // // 행렬 거듭제곱
-// // Θ(2^n)
+// // Θ(log n)
 // vector<vector<long long>> multiply(const vector<vector<long long>>& A, const vector<vector<long long>>& B) {
 
 
