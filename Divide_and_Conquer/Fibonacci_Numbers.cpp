@@ -58,7 +58,7 @@ vector<vector<long long>> multiply(const vector<vector<long long>>& A, const vec
 }
 
 // 지수 연산을 분할 정복 알고리즘으로 구현
-vector<vector<long long>> matrix_pow(vector<vector<long long>> base, int n) {
+vector<vector<long long>> matrix_pow(const vector<vector<long long>> &base, int n) {
 
     // 지수가 1인 경우 그 자신 리턴
     if (n == 1) return base;
