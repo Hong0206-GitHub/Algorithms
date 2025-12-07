@@ -3,7 +3,7 @@
 using namespace std;
 
 // DP로 LCS 구하는 함수
-void LCS(vector<vector<int>> &table, string &x, string &y);
+void LCS_bottom_up(vector<vector<int>> &table, string &x, string &y);
 int LCS_top_down(vector<vector<int>> &table, string &x, string &y, int i, int j);
 
 int main(void) {
@@ -18,7 +18,7 @@ int main(void) {
     // look-up table 선언
     vector<vector<int>> table(x.length() + 1, vector<int>(y.length() + 1));
     // 함수 호출하여, LCS 구하기
-    LCS(table, x, y);
+    LCS_bottom_up(table, x, y);
 
     // 답안 출력
     cout << table[x.length()][y.length()] << '\n';
