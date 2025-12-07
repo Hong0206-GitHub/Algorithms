@@ -58,14 +58,10 @@ int ways_bottom_up_clear(int n) {
     if (n == 0) return 1;
 
     // dp 테이블 사용 대신, 연산 루틴을 고려하여 3개의 변수만 사용
-    int temp1 = 1, temp2 = 2, temp3 = 4, answer;
-
-    // for문에 부합하지 않는 n의 값을 미리 처리
-    if (n == 1) return temp1;
-    if (n == 2) return temp2;
+    int temp1 = 0, temp2 = 0, temp3 = 1, answer = 0;
 
     // 점화식
-    for (int i = 3; i <= n; i++) {
+    for (int i = 1; i <= n; i++) {
         answer = temp3 + temp2 + temp1;
         temp1 = temp2;
         temp2 = temp3;
