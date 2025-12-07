@@ -4,6 +4,7 @@ using namespace std;
 
 // DP로 LCS 구하는 함수
 void LCS(vector<vector<int>> &table, string &x, string &y);
+int LCS_top_down(vector<vector<int>> &table, string &x, string &y, int i, int j);
 
 int main(void) {
 
@@ -27,8 +28,8 @@ int main(void) {
     return 0;
 }
 
-
-void LCS(vector<vector<int>> &table, string &x, string &y) {
+// 바텀-업 (반복문)으로 구현
+void LCS_bottom_up(vector<vector<int>> &table, string &x, string &y) {
 
     // 0번 인덱스의 경우, 두 문자열의 길이가 0인 경우 0이므로, 배제
     for (int i = 1; i <= x.length(); i++) {
@@ -39,4 +40,21 @@ void LCS(vector<vector<int>> &table, string &x, string &y) {
             else table[i][j] = max(table[i][j - 1], table[i - 1][j]);
         }
     }
+}
+
+int LCS_top_down(vector<vector<int>> &table, string &x, string &y, int i, int j) {
+    
+    // prefix 길이가 0이면 0
+    if (i == 0 || j == 0) return 0;
+
+    // dp테이블에 기록되지 않은 상태라면, 아래 연산 수행
+    if (table[i][j] == -1) {
+        // 글자가 같은 경우, 이전 LCS 길이 + 1
+        if (x[i - 1] == y[j - 1]) table[i][j] = LCS_top_down(table, x, y, i - 1, j - 1) + 1;
+        
+        // 글자가 다른 경우, x의 마지막 문자나, y의 마지막 문자를 제한 LCS 테이블에서 큰 값 선택
+        else table[i][j] =  max(LCS_top_down(table, x, y, i - 1, j), LCS_top_down(table, x, y, i, j - 1));
+    }
+
+    return table[i][j];
 }
